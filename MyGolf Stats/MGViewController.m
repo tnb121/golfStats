@@ -7,6 +7,7 @@
 //
 
 #import "MGViewController.h"
+#import <Parse/Parse.h>
 
 @interface MGViewController ()
 
@@ -16,8 +17,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)didReceiveMemoryWarning

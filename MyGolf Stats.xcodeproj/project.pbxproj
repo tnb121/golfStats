@@ -21,6 +21,33 @@
 		5F0DD2461857E0DF0065CBC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD2281857E0DF0065CBC1 /* UIKit.framework */; };
 		5F0DD24E1857E0DF0065CBC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F0DD24C1857E0DF0065CBC1 /* InfoPlist.strings */; };
 		5F0DD2501857E0DF0065CBC1 /* MyGolf_StatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0DD24F1857E0DF0065CBC1 /* MyGolf_StatsTests.m */; };
+		5F0DD25B1857E2420065CBC1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD25A1857E2420065CBC1 /* Parse.framework */; };
+		5F0DD25D1857E2730065CBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD25C1857E2730065CBC1 /* AudioToolbox.framework */; };
+		5F0DD25F1857E27A0065CBC1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD25E1857E27A0065CBC1 /* CFNetwork.framework */; };
+		5F0DD2611857E2890065CBC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD2601857E2890065CBC1 /* CoreLocation.framework */; };
+		5F0DD2631857E2970065CBC1 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD2621857E2970065CBC1 /* libz.1.1.3.dylib */; };
+		5F0DD2651857E2A50065CBC1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD2641857E2A50065CBC1 /* MobileCoreServices.framework */; };
+		5F0DD2671857E2AF0065CBC1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD2661857E2AF0065CBC1 /* QuartzCore.framework */; };
+		5F0DD2691857E2B60065CBC1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD2681857E2B60065CBC1 /* Security.framework */; };
+		5F0DD26B1857E2BD0065CBC1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD26A1857E2BD0065CBC1 /* StoreKit.framework */; };
+		5F0DD26D1857E2C80065CBC1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0DD26C1857E2C80065CBC1 /* SystemConfiguration.framework */; };
+		5F0DD2731857E4600065CBC1 /* MGRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0DD2721857E4600065CBC1 /* MGRound.m */; };
+		5F0DD2761857E4750065CBC1 /* MGHole.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0DD2751857E4750065CBC1 /* MGHole.m */; };
+		5F0DD2791857EBD90065CBC1 /* MGShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0DD2781857EBD90065CBC1 /* MGShot.m */; };
+		5F1584731880DB9600C2198D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1584721880DB9600C2198D /* FacebookSDK.framework */; };
+		5F15847F1880DF2F00C2198D /* MGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15847E1880DF2F00C2198D /* MGHomeViewController.m */; };
+		5F1584821880DF4900C2198D /* MGNewRoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1584811880DF4900C2198D /* MGNewRoundViewController.m */; };
+		5F1584851880DF6600C2198D /* MGStatsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1584841880DF6600C2198D /* MGStatsDetailViewController.m */; };
+		5F1584881880DF7900C2198D /* MGSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1584871880DF7900C2198D /* MGSettingsViewController.m */; };
+		5F15848C1880E1B700C2198D /* KeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15848B1880E1B700C2198D /* KeyboardController.m */; };
+		5F15848F1880E4E000C2198D /* ParseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F15848E1880E4E000C2198D /* ParseData.m */; };
+		5F1584921880E57200C2198D /* CourseFromParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1584911880E57200C2198D /* CourseFromParse.m */; };
+		5FC6D737186CF1300070DD52 /* MGTeeShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6D736186CF1300070DD52 /* MGTeeShotViewController.m */; };
+		5FC6D73A186CF14A0070DD52 /* MGApproachShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6D739186CF14A0070DD52 /* MGApproachShotViewController.m */; };
+		5FC6D73D186CF1650070DD52 /* MGGreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6D73C186CF1650070DD52 /* MGGreenViewController.m */; };
+		5FDFACCF18672830003FFD78 /* MGCurrentRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFACCE18672830003FFD78 /* MGCurrentRound.m */; };
+		5FDFACD218672849003FFD78 /* MGCurrentHole.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFACD118672849003FFD78 /* MGCurrentHole.m */; };
+		5FF1E67A185E823300C4CA0D /* MGGolfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF1E679185E823300C4CA0D /* MGGolfer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +80,49 @@
 		5F0DD24B1857E0DF0065CBC1 /* MyGolf StatsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyGolf StatsTests-Info.plist"; sourceTree = "<group>"; };
 		5F0DD24D1857E0DF0065CBC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5F0DD24F1857E0DF0065CBC1 /* MyGolf_StatsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGolf_StatsTests.m; sourceTree = "<group>"; };
+		5F0DD25A1857E2420065CBC1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		5F0DD25C1857E2730065CBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5F0DD25E1857E27A0065CBC1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5F0DD2601857E2890065CBC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5F0DD2621857E2970065CBC1 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		5F0DD2641857E2A50065CBC1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5F0DD2661857E2AF0065CBC1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5F0DD2681857E2B60065CBC1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5F0DD26A1857E2BD0065CBC1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5F0DD26C1857E2C80065CBC1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F0DD2711857E4600065CBC1 /* MGRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRound.h; sourceTree = "<group>"; };
+		5F0DD2721857E4600065CBC1 /* MGRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRound.m; sourceTree = "<group>"; };
+		5F0DD2741857E4750065CBC1 /* MGHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHole.h; sourceTree = "<group>"; };
+		5F0DD2751857E4750065CBC1 /* MGHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHole.m; sourceTree = "<group>"; };
+		5F0DD2771857EBD90065CBC1 /* MGShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGShot.h; sourceTree = "<group>"; };
+		5F0DD2781857EBD90065CBC1 /* MGShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGShot.m; sourceTree = "<group>"; };
+		5F1584721880DB9600C2198D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		5F15847D1880DF2F00C2198D /* MGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHomeViewController.h; sourceTree = "<group>"; };
+		5F15847E1880DF2F00C2198D /* MGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHomeViewController.m; sourceTree = "<group>"; };
+		5F1584801880DF4900C2198D /* MGNewRoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNewRoundViewController.h; sourceTree = "<group>"; };
+		5F1584811880DF4900C2198D /* MGNewRoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNewRoundViewController.m; sourceTree = "<group>"; };
+		5F1584831880DF6600C2198D /* MGStatsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGStatsDetailViewController.h; sourceTree = "<group>"; };
+		5F1584841880DF6600C2198D /* MGStatsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGStatsDetailViewController.m; sourceTree = "<group>"; };
+		5F1584861880DF7900C2198D /* MGSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSettingsViewController.h; sourceTree = "<group>"; };
+		5F1584871880DF7900C2198D /* MGSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSettingsViewController.m; sourceTree = "<group>"; };
+		5F15848A1880E1B700C2198D /* KeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardController.h; sourceTree = "<group>"; };
+		5F15848B1880E1B700C2198D /* KeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardController.m; sourceTree = "<group>"; };
+		5F15848D1880E4E000C2198D /* ParseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseData.h; sourceTree = "<group>"; };
+		5F15848E1880E4E000C2198D /* ParseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseData.m; sourceTree = "<group>"; };
+		5F1584901880E57200C2198D /* CourseFromParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseFromParse.h; sourceTree = "<group>"; };
+		5F1584911880E57200C2198D /* CourseFromParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseFromParse.m; sourceTree = "<group>"; };
+		5FC6D735186CF1300070DD52 /* MGTeeShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTeeShotViewController.h; sourceTree = "<group>"; };
+		5FC6D736186CF1300070DD52 /* MGTeeShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTeeShotViewController.m; sourceTree = "<group>"; };
+		5FC6D738186CF14A0070DD52 /* MGApproachShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGApproachShotViewController.h; sourceTree = "<group>"; };
+		5FC6D739186CF14A0070DD52 /* MGApproachShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGApproachShotViewController.m; sourceTree = "<group>"; };
+		5FC6D73B186CF1650070DD52 /* MGGreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGreenViewController.h; sourceTree = "<group>"; };
+		5FC6D73C186CF1650070DD52 /* MGGreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGreenViewController.m; sourceTree = "<group>"; };
+		5FDFACCD18672830003FFD78 /* MGCurrentRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCurrentRound.h; sourceTree = "<group>"; };
+		5FDFACCE18672830003FFD78 /* MGCurrentRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCurrentRound.m; sourceTree = "<group>"; };
+		5FDFACD018672849003FFD78 /* MGCurrentHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCurrentHole.h; sourceTree = "<group>"; };
+		5FDFACD118672849003FFD78 /* MGCurrentHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCurrentHole.m; sourceTree = "<group>"; };
+		5FF1E678185E823300C4CA0D /* MGGolfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGolfer.h; sourceTree = "<group>"; };
+		5FF1E679185E823300C4CA0D /* MGGolfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGolfer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +130,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0DD26D1857E2C80065CBC1 /* SystemConfiguration.framework in Frameworks */,
+				5F0DD26B1857E2BD0065CBC1 /* StoreKit.framework in Frameworks */,
+				5F0DD2691857E2B60065CBC1 /* Security.framework in Frameworks */,
+				5F0DD2671857E2AF0065CBC1 /* QuartzCore.framework in Frameworks */,
+				5F0DD2651857E2A50065CBC1 /* MobileCoreServices.framework in Frameworks */,
+				5F0DD2631857E2970065CBC1 /* libz.1.1.3.dylib in Frameworks */,
+				5F0DD2611857E2890065CBC1 /* CoreLocation.framework in Frameworks */,
 				5F0DD2271857E0DF0065CBC1 /* CoreGraphics.framework in Frameworks */,
+				5F0DD25F1857E27A0065CBC1 /* CFNetwork.framework in Frameworks */,
+				5F0DD25D1857E2730065CBC1 /* AudioToolbox.framework in Frameworks */,
 				5F0DD2291857E0DF0065CBC1 /* UIKit.framework in Frameworks */,
+				5F0DD25B1857E2420065CBC1 /* Parse.framework in Frameworks */,
 				5F0DD2251857E0DF0065CBC1 /* Foundation.framework in Frameworks */,
+				5F1584731880DB9600C2198D /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +182,17 @@
 		5F0DD2231857E0DF0065CBC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F1584721880DB9600C2198D /* FacebookSDK.framework */,
+				5F0DD26C1857E2C80065CBC1 /* SystemConfiguration.framework */,
+				5F0DD26A1857E2BD0065CBC1 /* StoreKit.framework */,
+				5F0DD2681857E2B60065CBC1 /* Security.framework */,
+				5F0DD2661857E2AF0065CBC1 /* QuartzCore.framework */,
+				5F0DD2641857E2A50065CBC1 /* MobileCoreServices.framework */,
+				5F0DD2621857E2970065CBC1 /* libz.1.1.3.dylib */,
+				5F0DD2601857E2890065CBC1 /* CoreLocation.framework */,
+				5F0DD25E1857E27A0065CBC1 /* CFNetwork.framework */,
+				5F0DD25C1857E2730065CBC1 /* AudioToolbox.framework */,
+				5F0DD25A1857E2420065CBC1 /* Parse.framework */,
 				5F0DD2241857E0DF0065CBC1 /* Foundation.framework */,
 				5F0DD2261857E0DF0065CBC1 /* CoreGraphics.framework */,
 				5F0DD2281857E0DF0065CBC1 /* UIKit.framework */,
@@ -112,12 +204,13 @@
 		5F0DD22A1857E0DF0065CBC1 /* MyGolf Stats */ = {
 			isa = PBXGroup;
 			children = (
-				5F0DD2331857E0DF0065CBC1 /* MGAppDelegate.h */,
-				5F0DD2341857E0DF0065CBC1 /* MGAppDelegate.m */,
-				5F0DD2361857E0DF0065CBC1 /* Main.storyboard */,
-				5F0DD2391857E0DF0065CBC1 /* MGViewController.h */,
-				5F0DD23A1857E0DF0065CBC1 /* MGViewController.m */,
-				5F0DD23C1857E0DF0065CBC1 /* Images.xcassets */,
+				5F0DD2701857E3EF0065CBC1 /* App Delegate */,
+				5F15847C1880DEFF00C2198D /* Tab View Controllers */,
+				5F0DD26E1857E3B00065CBC1 /* View Controllers */,
+				5F1584891880E16600C2198D /* Sub Controllers */,
+				5F0DD2591857E0FD0065CBC1 /* Model */,
+				5FDFACCC186727E3003FFD78 /* Singletons */,
+				5F0DD26F1857E3D30065CBC1 /* View */,
 				5F0DD22B1857E0DF0065CBC1 /* Supporting Files */,
 			);
 			path = "MyGolf Stats";
@@ -150,6 +243,93 @@
 				5F0DD24C1857E0DF0065CBC1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F0DD2591857E0FD0065CBC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FF1E678185E823300C4CA0D /* MGGolfer.h */,
+				5FF1E679185E823300C4CA0D /* MGGolfer.m */,
+				5F0DD2711857E4600065CBC1 /* MGRound.h */,
+				5F0DD2721857E4600065CBC1 /* MGRound.m */,
+				5F0DD2741857E4750065CBC1 /* MGHole.h */,
+				5F0DD2751857E4750065CBC1 /* MGHole.m */,
+				5F0DD2771857EBD90065CBC1 /* MGShot.h */,
+				5F0DD2781857EBD90065CBC1 /* MGShot.m */,
+				5F1584901880E57200C2198D /* CourseFromParse.h */,
+				5F1584911880E57200C2198D /* CourseFromParse.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5F0DD26E1857E3B00065CBC1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F0DD2391857E0DF0065CBC1 /* MGViewController.h */,
+				5F0DD23A1857E0DF0065CBC1 /* MGViewController.m */,
+				5FC6D735186CF1300070DD52 /* MGTeeShotViewController.h */,
+				5FC6D736186CF1300070DD52 /* MGTeeShotViewController.m */,
+				5FC6D738186CF14A0070DD52 /* MGApproachShotViewController.h */,
+				5FC6D739186CF14A0070DD52 /* MGApproachShotViewController.m */,
+				5FC6D73B186CF1650070DD52 /* MGGreenViewController.h */,
+				5FC6D73C186CF1650070DD52 /* MGGreenViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5F0DD26F1857E3D30065CBC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F0DD2361857E0DF0065CBC1 /* Main.storyboard */,
+				5F0DD23C1857E0DF0065CBC1 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5F0DD2701857E3EF0065CBC1 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				5F0DD2331857E0DF0065CBC1 /* MGAppDelegate.h */,
+				5F0DD2341857E0DF0065CBC1 /* MGAppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		5F15847C1880DEFF00C2198D /* Tab View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F15847D1880DF2F00C2198D /* MGHomeViewController.h */,
+				5F15847E1880DF2F00C2198D /* MGHomeViewController.m */,
+				5F1584801880DF4900C2198D /* MGNewRoundViewController.h */,
+				5F1584811880DF4900C2198D /* MGNewRoundViewController.m */,
+				5F1584831880DF6600C2198D /* MGStatsDetailViewController.h */,
+				5F1584841880DF6600C2198D /* MGStatsDetailViewController.m */,
+				5F1584861880DF7900C2198D /* MGSettingsViewController.h */,
+				5F1584871880DF7900C2198D /* MGSettingsViewController.m */,
+			);
+			name = "Tab View Controllers";
+			sourceTree = "<group>";
+		};
+		5F1584891880E16600C2198D /* Sub Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F15848A1880E1B700C2198D /* KeyboardController.h */,
+				5F15848B1880E1B700C2198D /* KeyboardController.m */,
+			);
+			name = "Sub Controllers";
+			sourceTree = "<group>";
+		};
+		5FDFACCC186727E3003FFD78 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				5F15848D1880E4E000C2198D /* ParseData.h */,
+				5F15848E1880E4E000C2198D /* ParseData.m */,
+				5FDFACCD18672830003FFD78 /* MGCurrentRound.h */,
+				5FDFACCE18672830003FFD78 /* MGCurrentRound.m */,
+				5FDFACD018672849003FFD78 /* MGCurrentHole.h */,
+				5FDFACD118672849003FFD78 /* MGCurrentHole.m */,
+			);
+			name = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +430,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0DD2731857E4600065CBC1 /* MGRound.m in Sources */,
 				5F0DD2351857E0DF0065CBC1 /* MGAppDelegate.m in Sources */,
+				5FDFACCF18672830003FFD78 /* MGCurrentRound.m in Sources */,
+				5FC6D73A186CF14A0070DD52 /* MGApproachShotViewController.m in Sources */,
+				5F15847F1880DF2F00C2198D /* MGHomeViewController.m in Sources */,
+				5FC6D737186CF1300070DD52 /* MGTeeShotViewController.m in Sources */,
+				5F0DD2761857E4750065CBC1 /* MGHole.m in Sources */,
+				5FF1E67A185E823300C4CA0D /* MGGolfer.m in Sources */,
+				5F0DD2791857EBD90065CBC1 /* MGShot.m in Sources */,
+				5F1584881880DF7900C2198D /* MGSettingsViewController.m in Sources */,
+				5F1584921880E57200C2198D /* CourseFromParse.m in Sources */,
+				5FDFACD218672849003FFD78 /* MGCurrentHole.m in Sources */,
+				5F15848C1880E1B700C2198D /* KeyboardController.m in Sources */,
 				5F0DD23B1857E0DF0065CBC1 /* MGViewController.m in Sources */,
+				5F15848F1880E4E000C2198D /* ParseData.m in Sources */,
+				5FC6D73D186CF1650070DD52 /* MGGreenViewController.m in Sources */,
+				5F1584821880DF4900C2198D /* MGNewRoundViewController.m in Sources */,
+				5F1584851880DF6600C2198D /* MGStatsDetailViewController.m in Sources */,
 				5F0DD2311857E0DF0065CBC1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +575,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Todd/Documents/XCode\\ Projects/MyGolf\\ Stats",
+					/Users/Todd/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyGolf Stats/MyGolf Stats-Prefix.pch";
 				INFOPLIST_FILE = "MyGolf Stats/MyGolf Stats-Info.plist";
@@ -392,6 +593,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Todd/Documents/XCode\\ Projects/MyGolf\\ Stats",
+					/Users/Todd/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyGolf Stats/MyGolf Stats-Prefix.pch";
 				INFOPLIST_FILE = "MyGolf Stats/MyGolf Stats-Info.plist";
@@ -461,6 +667,7 @@
 				5F0DD2551857E0DF0065CBC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F0DD2561857E0DF0065CBC1 /* Build configuration list for PBXNativeTarget "MyGolf StatsTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +676,7 @@
 				5F0DD2581857E0DF0065CBC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
