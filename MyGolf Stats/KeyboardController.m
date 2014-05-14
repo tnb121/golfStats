@@ -18,7 +18,9 @@
 
     NSMutableArray *toolbarItems = [[NSMutableArray alloc] init];
 
-    UISegmentedControl *leftItems = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Previous", @"Next", nil]];
+	if (prevEnabled==YES || nextEnabled==YES)
+	{
+	UISegmentedControl *leftItems = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Previous", @"Next", nil]];
     [leftItems setEnabled:prevEnabled forSegmentAtIndex:0];
     [leftItems setEnabled:nextEnabled forSegmentAtIndex:1];
     leftItems.momentary = YES; // do not preserve button's state
@@ -26,13 +28,14 @@
 
     UIBarButtonItem *nextPrevControl = [[UIBarButtonItem alloc] initWithCustomView:leftItems];
     [toolbarItems addObject:nextPrevControl];
+	}
 
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     [toolbarItems addObject:flexSpace];
 
     UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneDidClick:)];
-    [toolbarItems addObject:doneButton];
-	[doneButton setEnabled:doneEnabled];
+        [toolbarItems addObject:doneButton];
+        [doneButton setEnabled:doneEnabled];
 
     toolbar.items = toolbarItems;
 

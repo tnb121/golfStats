@@ -13,15 +13,12 @@
 
 + (id)sharedCurrentHole
 {
-    static MGHole *sharedCurrentHole= nil;
+    static MGCurrentHole *sharedCurrentHole= nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedCurrentHole= [[self alloc] init];
     });
     return sharedCurrentHole;
-}
-+ (NSString *)parseClassName {
-	return @"MGHole";
 }
 
 - (id)init

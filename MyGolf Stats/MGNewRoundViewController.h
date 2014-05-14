@@ -11,13 +11,14 @@
 #import "KeyboardController.h"
 #import "ParseData.h"
 
-@interface MGNewRoundViewController : UIViewController<UITextFieldDelegate,KeyboardControllerDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
+@interface MGNewRoundViewController : UIViewController<UITextFieldDelegate,KeyboardControllerDelegate,UIPickerViewDataSource, UIPickerViewDelegate,UIActionSheetDelegate>
 
 
 @property (strong, nonatomic) KeyboardController *enhancedKeyboard;
-@property (strong, nonatomic)NSMutableArray * teeColors;
-@property (strong,nonatomic)NSMutableArray * coursesArray;
-@property (strong,nonatomic) PFGeoPoint *currentLocation;
+@property (strong, nonatomic) NSMutableArray * teeColors;
+@property (strong,nonatomic)  NSMutableArray * coursesArray;
+@property (strong,nonatomic) NSMutableArray * lengthArray;
+@property (strong,nonatomic)  PFGeoPoint *currentLocation;
 
 
 @property (strong,nonatomic)IBOutlet UITextField *ratingValue;
@@ -25,10 +26,9 @@
 @property (strong,nonatomic)IBOutlet UITextField *dateValue;
 @property (strong,nonatomic)IBOutlet UITextField *courseNameValue;
 @property (strong,nonatomic)IBOutlet UITextField * teeValue;
+@property (weak, nonatomic) IBOutlet UITextField *roundLength;
 @property (strong, nonatomic) IBOutlet UIButton *createRoundButton;
 
 @property (strong, nonatomic) IBOutlet UITextField *existingRoundText;
-
-- (IBAction)createNewRound:(id)sender;
 
 @end

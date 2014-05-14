@@ -16,19 +16,30 @@
 	NSNumber * slopeAverage;
 	NSNumber * scoringAverage;
 	NSNumber * roundCount;
-	NSArray * roundsFromParse;
-	NSArray * roundsRecent20FromParse;
-	NSArray * handicapHistoryFromParse;
-	NSArray * coursesFromParse;
+	NSArray  * roundsFromParse;
+    NSArray  * roundsFromParseForHandicap;
+	NSArray  * holesFromParse;
+	NSArray  * shotsFromParse;
+	NSArray  * roundsRecent20FromParse;
+	NSArray  * coursesFromParse;
+	NSArray  * coursesFromParseWithHoles;
+	NSArray  * uniqueCourseArray;
+
+	NSDate * Last5RoundsDate;
+	NSDate* Last10RoundsDate;
+	NSDate* Last15RoundsDate;
+	NSDate* Last20RoundsDate;
 }
 
 + (id)sharedParseData;
 
 -(NSArray *) uniqueCourseArray;
 -(void)updateParseRounds;
--(void)updateParseHandicapHistory;
+-(void)updateParseHoles;
+-(void)updateParseShots;
 -(void)updateParseRoundsRecent20;
 -(void)updateParseCourses;
+-(void)updateParseCoursesWithHoles;
 -(void)updateAppVersion;
 -(void)upgradeToFullVersion;
 -(void)incrementRoundCount;
@@ -37,9 +48,20 @@
 @property (nonatomic,retain) NSNumber * scoringAverage;
 @property (retain,nonatomic) NSNumber * roundCount;
 @property (strong,nonatomic) NSArray * roundsFromParse;
-@property (copy,nonatomic) NSArray * roundsRecent20FromParse;
-@property (strong,nonatomic) NSArray * handicapHistoryFromParse;
+@property (strong,nonatomic) NSArray * roundsFromParseForHandicap;
+@property (strong,nonatomic) NSArray * holesFromParse;
+@property (strong,nonatomic) NSArray * shotsFromParse;
+@property (copy,nonatomic)   NSArray * roundsRecent20FromParse;
 @property (strong,nonatomic) NSArray * coursesFromParse;
-@property (strong,nonatomic)SKProduct * product;
+@property (strong,nonatomic) NSArray * coursesFromParseWithHoles;
+@property (strong,nonatomic) NSArray * uniqueCourseArray;
+@property (strong,nonatomic) SKProduct * product;
+
+@property (strong,nonatomic) NSDate * Last5RoundsDate;
+@property (strong,nonatomic) NSDate* Last10RoundsDate;
+@property (strong,nonatomic) NSDate * Last15RoundsDate;
+@property (strong,nonatomic) NSDate* Last20RoundsDate;
+
+@property (nonatomic) BOOL updatedDataNeeded;
 
 @end

@@ -15,7 +15,11 @@
 	return @"MGHole";
 }
 
+@dynamic  parseID;
 @dynamic  roundID;
+@dynamic  course;
+@dynamic  teeColor;
+@dynamic  holeDate;
 @dynamic  holeNumber;
 @dynamic  par;
 @dynamic  holeHandicap;
@@ -25,7 +29,9 @@
 @dynamic  putts;
 @dynamic  penaltyStrokes;
 @dynamic  score;
-@dynamic upAndDown;
-@dynamic sandSave;
+@dynamic  upAndDown;
+@dynamic  sandSave;
+@dynamic  shots;
+@dynamic  currentShotNumber;
 
 @end

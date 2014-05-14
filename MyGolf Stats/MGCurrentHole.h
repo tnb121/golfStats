@@ -8,9 +8,8 @@
 
 #import "MGHole.h"
 
-@interface MGCurrentHole : MGHole<PFSubclassing>
+@interface MGCurrentHole : MGHole
 
-+ (NSString *)parseClassName;
 
 + (id)sharedCurrentHole;
 

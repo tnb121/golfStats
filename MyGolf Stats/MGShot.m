@@ -16,12 +16,13 @@
 }
 
 
-@dynamic  user;
-@dynamic roundID;
-@dynamic  holeID;
+@dynamic  parseID;
+@dynamic  roundID;
+@dynamic  holeNumber;
 @dynamic  club;
-@dynamic  fairway;
-@dynamic  green;
-
+@dynamic  startingLocation;
+@dynamic  endingLocation;
+@dynamic  target;
+@dynamic  effort;
 
 @end

@@ -15,7 +15,7 @@
 	return @"MGGolfer";
 }
 
-@dynamic  parseID;
+@dynamic parseID;
 @dynamic name;
 @dynamic email;
 @dynamic phoneNumber;

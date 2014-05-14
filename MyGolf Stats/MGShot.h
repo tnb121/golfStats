@@ -12,11 +12,13 @@
 
 + (NSString *)parseClassName;
 
-@property (strong,nonatomic) NSString * user;
+@property (strong,nonatomic) NSString * parseID;
 @property (strong,nonatomic) NSString * roundID;
-@property (strong,nonatomic) NSString * holeID;
+@property (strong,nonatomic) NSNumber * holeNumber;
 @property (strong,nonatomic) NSString * club;
-@property (strong,nonatomic) NSString * fairway;
-@property (strong,nonatomic) NSString * green;
+@property (strong,nonatomic) NSString * startingLocation;
+@property (strong,nonatomic) NSString * endingLocation;
+@property (strong,nonatomic) NSString * target;
+@property (strong,nonatomic) NSString * effort;
 
 @end
