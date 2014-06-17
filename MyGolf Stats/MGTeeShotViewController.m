@@ -239,7 +239,7 @@ float  switchHeightScale = 1.0;
     else
         [self enableSwitches];
     
-	self.holeNumberLabel.text = [@"Hole " stringByAppendingString:[NSString stringWithFormat:@"%ld",[self.activeHoleObject.holeNumber integerValue]]];
+	self.holeNumberLabel.text = [@"Hole " stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)[self.activeHoleObject.holeNumber integerValue]]];
     NSString * testString =[@"Hole " stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)currentHoleNumber]];
     self.holeNumberLabel.text = testString;
     [self enableOrDisableHoleButtons];

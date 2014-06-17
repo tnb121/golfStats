@@ -32,12 +32,16 @@
 		case 1://Resources
 			switch (indexPath.row)
 			{
-				case 0:
+                case 0:
+					[self goToMyGolfHandicap:self];
+					[PFAnalytics trackEvent:@"MyGolfHandicapFromMyGolfStats"];
+					break;
+				case 1:
 					[self goToUSGASWebsite:nil];
 					[PFAnalytics trackEvent:@"USGA Website"];
 					break;
 
-				case 1:
+				case 2:
 					[self goToMyGolfInsightWebsite:nil];
 					[PFAnalytics trackEvent:@"MyGolfInsight.com"];
 					break;
@@ -164,8 +168,18 @@
 
 - (void)goToITunesFeedback:(id)sender
 {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/mygolf-handicap-calculator/id815278847?mt=8&ign-mpt=uo%3D4"]];
+    
+	//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id815278847"]];
+}
+
+- (void)goToMyGolfHandicap:(id)sender
+{
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/mygolf-handicap-calculator/id759479888?mt=8&ign-mpt=uo%3D4"]];
 }
+
+//https://itunes.apple.com/us/app/mygolf-stats/id815278847?ls=1&mt=8
+
 
 - (void)emailFeedback:(id)sender
 {
@@ -225,10 +239,10 @@
 		[versionAlert show];
 	}
 	else
-		[PFPurchase buyProduct:@"com.mygolfinsight.mygolfhandicap.fullversionupgrade" block:^(NSError *error) {
+		[PFPurchase buyProduct:@"com.mygolfinsight.mygolfstats.fullversionupgrade" block:^(NSError *error) {
 			if (!error)
 			{
-				UIAlertView *succesfulUpgradeAlert = [[UIAlertView alloc]initWithTitle:@"Upgrade Complete" message:@"Thank you for upgrading. Would you like to review the MyGolf Handicap Calculator app?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"No Thanks", @"Leave Review", nil];
+				UIAlertView *succesfulUpgradeAlert = [[UIAlertView alloc]initWithTitle:@"Upgrade Complete" message:@"Thank you for upgrading. Would you like to review the MyGolf Stats app?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"No Thanks", @"Leave Review", nil];
 				[succesfulUpgradeAlert show];
 			}
 			else NSLog(@" Error = %@",error);
@@ -247,10 +261,10 @@
 	}
 	if ([buttonTitle isEqualToString:@"Upgrade"])
 	{
-		[PFPurchase buyProduct:@"com.mygolfinsight.mygolfhandicap.fullversionupgrade" block:^(NSError *error) {
+		[PFPurchase buyProduct:@"com.mygolfinsight.mygolfstats.fullversionupgrade" block:^(NSError *error) {
 			if (!error)
 			{
-				UIAlertView *succesfulUpgradeAlert = [[UIAlertView alloc]initWithTitle:@"Upgrade Complete" message:@"Thank you for upgrading. Would you like to review the MyGolf Handicap Calculator app?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"No Thanks", @"Leave Review", nil];
+				UIAlertView *succesfulUpgradeAlert = [[UIAlertView alloc]initWithTitle:@"Upgrade Complete" message:@"Thank you for upgrading. Would you like to review the MyGolf Stats app?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"No Thanks", @"Leave Review", nil];
 				[succesfulUpgradeAlert show];
 			}
 			else NSLog(@" Error = %@",error);
@@ -280,7 +294,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-	NSArray * identifiers = @[@"com.mygolfinsight.mygolfhandicap.fullversionupgrade"];
+	NSArray * identifiers = @[@"com.mygolfinsight.mygolfstats.fullversionupgrade"];
 	[self validateProductIdentifiers:identifiers];
 
 }
@@ -425,19 +439,25 @@ willDisplayHeaderView : (UIView*) view
 // SKProductsRequestDelegate protocol method
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
-   // self.product =[response.products objectAtIndex:0];
-	//NSLog(@"%@",self.product.price);
-	//[self UpgradePrice];
+    self.product =[response.products objectAtIndex:0];
+	NSLog(@"%@",self.product.price);
+	[self UpgradePrice];
 }
 
 -(void)UpgradePrice
 {
-	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-	[numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-	[numberFormatter setLocale:_product.priceLocale];
-	NSString *formattedPrice = [numberFormatter stringFromNumber:_product.price];
-	_UpgradeLabel.text=[@"Upgrade to Full Version for " stringByAppendingString:formattedPrice];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"MyGolfStatsFullVersion"]==YES)
+        self.UpgradeLabel.text = @"Full Version Purchased - Thank You";
+    else
+    {
+    
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setLocale:_product.priceLocale];
+        NSString *formattedPrice = [numberFormatter stringFromNumber:_product.price];
+        _UpgradeLabel.text=[@"Upgrade to Full Version for " stringByAppendingString:formattedPrice];
+    }
 }
 
 

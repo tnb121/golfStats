@@ -14,6 +14,9 @@
 @property (strong,nonatomic) ParseData * parseData;
 @property (strong,nonatomic) UIView * inactiveView;
 
+@property (strong,nonatomic) NSMutableArray * slopeArray;
+@property (strong,nonatomic) NSMutableArray * ratingArray;
+
 @end
 
 @implementation MGNewRoundViewController
@@ -25,6 +28,7 @@
 @synthesize teeValue=_teeValue;
 @synthesize createRoundButton=_createRoundButton;
 @synthesize currentLocation=_currentLocation;
+
 @synthesize parseData;
 @synthesize coursesArray=_coursesArray;
 
@@ -32,6 +36,13 @@
 @synthesize lengthArray=_lengthArray;
 
 @synthesize inactiveView;
+
+NSInteger teeIndex      = 0;
+NSInteger courseIndex   = 0;
+NSInteger lengthIndex   = 1;
+NSInteger slopeIndex    = 113-55;
+NSInteger ratingIndex1  = 72-55;
+NSInteger ratingIndex2  = 0;
 
 -(ParseData*)parseData
 {
@@ -41,6 +52,41 @@
 - (IBAction)BackToHome:(id)sender
 {
     [self.tabBarController setSelectedIndex:0];
+}
+
+-(NSMutableArray*)slopeArray
+{
+    if(!_slopeArray)
+    {
+        _slopeArray = [[NSMutableArray alloc]init];
+        
+        NSInteger x;
+        
+        for (x=55; x<=155; x++)
+        {
+            [_slopeArray addObject:[NSNumber numberWithInteger:x]];
+        }
+        
+    }
+    
+    return _slopeArray;
+}
+
+-(NSMutableArray*)ratingArray
+{
+    if(!_ratingArray)
+    {
+        _ratingArray = [[NSMutableArray alloc]init];
+        
+        NSInteger x;
+        
+        for (x=55; x<=95; x++)
+        {
+            [_ratingArray addObject:[NSNumber numberWithInteger:x]];
+        }
+    }
+    
+    return _ratingArray;
 }
 
 -(BOOL) RoundRatingCheck
@@ -104,23 +150,22 @@
 {
 	if ([self RoundCourseNameCheck] == YES && [self RoundTeeNameCheck] == YES && [self RoundDateCheck] == YES && [self RoundRatingCheck] == YES && [self RoundSlopeCheck] == YES && [self roundLengthCheck]==YES)
 	{
-		self.createRoundButton.enabled=YES;
-        self.createRoundButton.tintColor = [UIColor blueColor];
-        self.createRoundButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+		//self.createRoundButton.enabled=YES;
+       // self.createRoundButton.tintColor = [UIColor blueColor];
+      //  self.createRoundButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
 		return YES;
 	}
 	else
 	{
-		self.createRoundButton.enabled=NO;
-        self.createRoundButton.tintColor = [UIColor whiteColor];
-         self.createRoundButton.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+	////	self.createRoundButton.enabled=NO;
+      //  self.createRoundButton.tintColor = [UIColor whiteColor];
+       //  self.createRoundButton.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
 		return NO;
 	}
 }
 
 - (IBAction)testDataEntry:(id)sender
 {
-
 	if([self roundDataEntryComplete] == YES)
 		return;
 	else
@@ -149,6 +194,20 @@
  
     
 }
+
+- (IBAction)dataEntrySaveTest:(id)sender
+{
+    if ([self roundDataEntryComplete]==YES)
+    {
+        [self initialSave:self];
+    }
+    else
+    {
+        UIAlertView *dataEntryAlert = [[UIAlertView alloc]initWithTitle:nil message:@"Please enter data for all fields." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [dataEntryAlert show];
+    }
+}
+
 
 -(IBAction)initialSave:(id)sender
 {
@@ -184,6 +243,7 @@
     self.parseData.updatedDataNeeded=YES;
 
 	[self performSegueWithIdentifier:@"newRoundSegue" sender:self];
+    
 
 }
 
@@ -199,15 +259,15 @@
     self.roundLength.text = nil;
     
     self.createRoundButton.layer.cornerRadius = 5;
-    // self.createRoundButton.layer.borderWidth = 2;
+    self.createRoundButton.layer.borderWidth = 2;
     self.createRoundButton.layer.borderColor=[UIColor whiteColor].CGColor;
-    self.createRoundButton.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+  //  self.createRoundButton.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
     
-    [self.createRoundButton setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
-    [self.createRoundButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+  //  [self.createRoundButton setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+ //   [self.createRoundButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     
-    self.createRoundButton.enabled = NO;
-    self.createRoundButton.tintColor = [UIColor whiteColor];
+   // self.createRoundButton.enabled = NO;
+  //  self.createRoundButton.tintColor = [UIColor whiteColor];
     [self enableTextBoxes];
     
     if ([self checkForLiteVersion]==YES)
@@ -220,6 +280,7 @@
             }
         }];
     }
+    
     else
     {
         inactiveView = [[UIView alloc]initWithFrame:self.view.frame];
@@ -237,7 +298,7 @@
 {
     [super viewDidDisappear:animated];
     [inactiveView removeFromSuperview];
-    [self.navigationController popViewControllerAnimated:NO];
+ //   [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -316,55 +377,346 @@
     [lengthPicker selectRow:1 inComponent:0 animated:YES];
 }
 
+-(IBAction)showSlopePicker:(id)sender
+{
+    UIPickerView *slopePicker = [[UIPickerView alloc] init];
+    slopePicker.delegate =self;
+    slopePicker.showsSelectionIndicator = YES;
+    slopePicker.tag = 4;
+    [self.slopeValue setInputView:slopePicker];
+    
+    NSInteger  slopeAverage = [[self.parseData slopeAverage]integerValue];
+    
+    if(slopeIndex == 113-55)
+    {
+        
+        if(!slopeAverage)
+            slopeAverage = 113;
+        slopeIndex = slopeAverage - 55;
+    }
+    
+    NSInteger slopeInt = [[self.slopeArray objectAtIndex:slopeIndex]integerValue];
+    
+    NSString * testString =[NSString stringWithFormat:@"%ld",(long)slopeInt];
+    
+    self.slopeValue.text = testString;
+    [slopePicker selectRow:slopeIndex inComponent:0 animated:YES];
+}
+
+-(IBAction)showRatingPicker:(id)sender
+{
+    UIPickerView *ratingPicker = [[UIPickerView alloc] init];
+    ratingPicker.delegate =self;
+    ratingPicker.showsSelectionIndicator = YES;
+    ratingPicker.tag = 5;
+    [self.ratingValue setInputView:ratingPicker];
+    
+    double rating1 = [[self.ratingArray objectAtIndex:ratingIndex1]doubleValue];
+    double rating2 = ratingIndex2;
+    double ratingReturn = rating1 + (rating2/10);
+    
+    self.ratingValue.text = [NSString stringWithFormat:@"%.1f",ratingReturn];
+    [ratingPicker selectRow:ratingIndex1 inComponent:0 animated:YES];
+    [ratingPicker selectRow:ratingIndex2 inComponent:1 animated:YES];
+    
+}
+
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-	//One column
-	return 1;
+    if(pickerView.tag == 5)
+        return 3;
+    else
+        return 1;
 }
+
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-
-	if(pickerView.tag == 1) return _teeColors.count;
-	if(pickerView.tag ==2) return _coursesArray.count;
-    if(pickerView.tag == 3) return 2;
-	else return 0;
+    switch (component)
+    {
+        case 0:
+            switch (pickerView.tag)
+        {
+            case 1:
+                return _teeColors.count;
+                break;
+            case 2:
+                return _coursesArray.count;
+                break;
+            case 3:
+                return 2;
+                break;
+            case 4:
+            {
+                return _slopeArray.count;
+                break;
+            }
+            case 5:
+                return _ratingArray.count;
+                break;
+                
+            default:
+                break;
+        }
+            
+        case 1:
+            switch (pickerView.tag)
+        {
+            case 5:
+                return 1;
+                break;
+                
+            default:
+                return 0;
+                break;
+        }
+        case 2:
+            switch (pickerView.tag)
+        {
+            case 5:
+                return 10;
+                break;
+                
+            default:
+                return 0;
+                break;
+        }
+            
+            
+        default:
+            return 0;
+            break;
+    }
 }
+
+
+-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    
+    switch (component)
+    {
+        case 0:
+            switch (pickerView.tag)
+        {
+            case 1:
+            {
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 45)];
+                [pickerLabel setText:[_teeColors objectAtIndex:row]];
+                [pickerLabel setTextAlignment:NSTextAlignmentCenter];
+                [pickerLabel setFont:[UIFont boldSystemFontOfSize:25]];
+                return pickerLabel;
+                break;
+            }
+            case 2:
+            {
+                NSString * courseName = [[_coursesArray objectAtIndex:row]valueForKey:@"name"];
+                NSString * teeName = [[_coursesArray objectAtIndex:row]valueForKey:@"tee"];
+                NSString * courseString2 = [[courseName stringByAppendingString:@" - "]stringByAppendingString:teeName];
+                
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 45)];
+                [pickerLabel setText:courseString2];
+                [pickerLabel setTextAlignment:NSTextAlignmentCenter];
+                return pickerLabel;
+                break;
+            }
+                break;
+            case 3:
+            {
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 45)];
+                [pickerLabel setText:[NSString stringWithFormat:@"%@",[self.lengthArray objectAtIndex:row]]];
+                [pickerLabel setTextAlignment:NSTextAlignmentCenter];
+                [pickerLabel setFont:[UIFont boldSystemFontOfSize:25]];
+                return pickerLabel;
+                break;
+            }
+                
+                
+            case 4:
+            {
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 45)];
+                [pickerLabel setText:[NSString stringWithFormat:@"%@",[self.slopeArray objectAtIndex:row]]];
+                [pickerLabel setTextAlignment:NSTextAlignmentCenter];
+                [pickerLabel setFont:[UIFont boldSystemFontOfSize:25]];
+                return pickerLabel;
+                break;
+            }
+                
+                
+            case 5:
+            {
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 190, 45)];
+                [pickerLabel setTextAlignment:NSTextAlignmentRight];
+                [pickerLabel setText:[NSString stringWithFormat:@"%@",[self.ratingArray objectAtIndex:row]]];
+                [pickerLabel setFont:[UIFont boldSystemFontOfSize:25]];
+                return pickerLabel;
+                break;
+            }
+                
+            default:
+                break;
+        }
+            
+        case 1:
+            switch (pickerView.tag)
+        {
+            case 5:
+            {
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 45)];
+                [pickerLabel setTextAlignment:NSTextAlignmentCenter];
+                [pickerLabel setText:@"."];
+                [pickerLabel setFont:[UIFont boldSystemFontOfSize:25]];
+                //[pickerLabel setBackgroundColor:[UIColor redColor]];
+                return pickerLabel;
+                break;
+            }
+                
+            default:
+                return nil;
+                break;
+        }
+        case 2:
+            switch (pickerView.tag)
+        {
+            case 5:
+            {
+                UILabel * pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 190, 45)];
+                [pickerLabel setTextAlignment:NSTextAlignmentLeft];
+                [pickerLabel setText:[NSString stringWithFormat:@"%ld",(long)row]];
+                [pickerLabel setFont:[UIFont boldSystemFontOfSize:25]];
+                return pickerLabel;
+                break;
+            }
+                
+            default:
+                return nil;
+                break;
+        }
+            
+            
+            
+        default:
+            return nil;
+            break;
+    }
+    
+}
+
 
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-	if(pickerView.tag ==1) return [_teeColors objectAtIndex:row];
-	if(pickerView.tag == 2)
-	{
-		NSString * courseName = [[_coursesArray objectAtIndex:row]valueForKey:@"name"];
-		NSString * teeName = [[_coursesArray objectAtIndex:row]valueForKey:@"tee"];
-		NSString * courseString2 = [[courseName stringByAppendingString:@" - "]stringByAppendingString:teeName];
-		return courseString2;
-	}
-    if(pickerView.tag ==3)
-        return [_lengthArray objectAtIndex:row];
-	else return nil;
+    // NSInteger tag = pickerView.tag;
+    
+    switch (component)
+    {
+        case 0:
+            switch (pickerView.tag)
+        {
+            case 1:
+                return [_teeColors objectAtIndex:teeIndex];
+                break;
+            case 2:
+            {
+                NSString * courseName = [[_coursesArray objectAtIndex:courseIndex]valueForKey:@"name"];
+                NSString * teeName = [[_coursesArray objectAtIndex:courseIndex]valueForKey:@"tee"];
+                NSString * courseString2 = [[courseName stringByAppendingString:@" - "]stringByAppendingString:teeName];
+                return courseString2;
+            }
+                break;
+            case 3:
+                return [self.lengthArray objectAtIndex:lengthIndex];
+                break;
+            case 4:
+            {
+                return [NSString stringWithFormat:@"%@",[self.slopeArray objectAtIndex:row]];
+                break;
+            }
+            case 5:
+                return [NSString stringWithFormat:@"%@",[self.ratingArray objectAtIndex:row]];
+                break;
+                
+            default:
+                break;
+        }
+            
+        case 1:
+            switch (pickerView.tag)
+        {
+            case 5:
+                return [NSString stringWithFormat:@"%ld",(long)row];
+                break;
+                
+            default:
+                return 0;
+                break;
+        }
+            
+        default:
+            return 0;
+            break;
+    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	if(pickerView.tag == 1) _teeValue.text=[_teeColors objectAtIndex:row];
-	if(pickerView.tag ==2)
-	{
-		_courseNameValue.text =[[_coursesArray objectAtIndex:row] valueForKey:@"name"];
-		_teeValue.text= [[_coursesArray objectAtIndex:row] valueForKey:@"tee"];
-		_slopeValue.text = [NSString stringWithFormat:@"%@",[[_coursesArray objectAtIndex:row] valueForKey:@"slope"]];
-		_ratingValue.text =[NSString stringWithFormat:@"%@",[[_coursesArray objectAtIndex:row] valueForKey:@"rating"]];
-	}
+    if(pickerView.tag == 1)
+    {
+        _teeValue.text=[_teeColors objectAtIndex:row];
+        teeIndex = row;
+    }
+    
+    if(pickerView.tag ==2)
+    {
+        NSInteger slope     =[[[_coursesArray objectAtIndex:row] valueForKey:@"slope"]integerValue];
+        double    rating    =[[[_coursesArray objectAtIndex:row] valueForKey:@"rating"]doubleValue]+.0001;
+        NSInteger ratingInt = rating;
+        double    ratingDecimal = rating -(double)ratingInt;
+        
+        ratingIndex1 = ratingInt-55;
+        ratingIndex2 = ratingDecimal * 10;
+        slopeIndex   = slope - 55;
+        
+        
+        _courseNameValue.text =[[_coursesArray objectAtIndex:row] valueForKey:@"name"];
+        _teeValue.text= [[_coursesArray objectAtIndex:row] valueForKey:@"tee"];
+        _slopeValue.text = [NSString stringWithFormat:@"%ld",(long)slope];
+        _ratingValue.text =[NSString stringWithFormat:@"%.1f",rating];
+        courseIndex = row;
+
+        
+        _ratingValue.text =[NSString stringWithFormat:@"%.1f",rating];
+        
+        
+    }
+    
     if(pickerView.tag == 3)
     {
         [self.roundLength setFont:[UIFont systemFontOfSize:14]];
         self.roundLength.text =[_lengthArray objectAtIndex:row];
+        lengthIndex = row;
     }
- 
+    
+    if(pickerView.tag == 4)
+    {
+        self.slopeValue.text = [NSString stringWithFormat:@"%@",[self.slopeArray objectAtIndex:row]];
+        slopeIndex = row;
+    }
+    
+    if(pickerView.tag == 5)
+    {
+        double wholeNumber = [pickerView selectedRowInComponent:0]+55;
+        double decimal = [pickerView selectedRowInComponent:2];
+        
+        double ratingReturn = wholeNumber + (decimal/10);
+        _ratingValue.text = [NSString stringWithFormat:@"%.1f",ratingReturn];
+        
+        if(component ==0)
+            ratingIndex1 = row;
+        else if (component == 2)
+            ratingIndex2 = row;
+        else return;
+    }
 }
-
 
 - (void) dismissKeyboard
 {
@@ -487,15 +839,28 @@
 	coursePicker.showsSelectionIndicator=YES;
 	coursePicker.tag=2;
 	[self.existingRoundText setInputView:coursePicker];
+    [self toolbarSetup:self.existingRoundText];
     
 	_coursesArray=[self.parseData.uniqueCourseArray mutableCopy];
 	_courseNameValue.text =[[_coursesArray objectAtIndex:0] valueForKey:@"name"];
 	_teeValue.text= [[_coursesArray objectAtIndex:0] valueForKey:@"tee"];
 	_slopeValue.text = [NSString stringWithFormat:@"%@",[[_coursesArray objectAtIndex:0] valueForKey:@"slope"]];
-	_ratingValue.text =[NSString stringWithFormat:@"%@",[[_coursesArray objectAtIndex:0] valueForKey:@"rating"]] ;
+
     
-    [sender setInputAccessoryView:[self.enhancedKeyboard getToolbarWithPrevEnabled:NO NextEnabled:YES DoneEnabled:YES]];
+    NSInteger slope     =[[[_coursesArray objectAtIndex:0] valueForKey:@"slope"]integerValue];
+    double    rating    =[[[_coursesArray objectAtIndex:0] valueForKey:@"rating"]doubleValue]+.0001;
+    NSInteger ratingInt = rating;
+    double    ratingDecimal = rating -(double)ratingInt;
+    
+    _ratingValue.text =[NSString stringWithFormat:@"%.1f",rating];
+    ratingIndex1 = ratingInt-55;
+    ratingIndex2 = ratingDecimal * 10;
+    slopeIndex   = slope - 55;
+    
+   
+    
 }
+
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -575,7 +940,7 @@
     
 	if(fullVersion== NO)
     {
-		if([[[ParseData sharedParseData]roundCount]integerValue]>=5)
+		if([[[ParseData sharedParseData]roundCountWithHoleData]integerValue]>=3)
             return NO;
     }
     

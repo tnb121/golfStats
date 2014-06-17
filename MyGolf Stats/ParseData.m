@@ -22,6 +22,7 @@
 @synthesize slopeAverage;
 @synthesize scoringAverage;
 @synthesize roundCount;
+@synthesize roundCountWithHoleData;
 @synthesize roundsFromParse;
 @synthesize roundsFromParseForHandicap;
 @synthesize holesFromParse;
@@ -119,12 +120,21 @@ NSInteger x;
             else
                 length = 20;
             
+        // Create predicate for round count of MyGolf Stats rounds
+            NSPredicate *roundsWithHoleData = [NSPredicate predicateWithFormat:@"roundHoles != nil"];
+            
         // Set singleton values
             roundsFromParseForHandicap  = [eighteenHoleArray2 subarrayWithRange:NSMakeRange(0, length)];
 			roundsFromParse             = [roundObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"roundDate" ascending:NO]]];
 			roundCount                  = [NSNumber numberWithDouble:roundObjects.count];
 			scoringAverage              = [NSNumber numberWithDouble:[[roundObjects valueForKeyPath:@"@avg.roundScore"]doubleValue]];
 			slopeAverage                = [NSNumber numberWithInteger:[[roundObjects valueForKeyPath:@"@avg.roundSlope"]integerValue]];
+            
+            NSArray * roundsWithHoles = [roundsFromParse filteredArrayUsingPredicate:roundsWithHoleData];
+            
+            roundCountWithHoleData = [NSNumber numberWithInteger:roundsWithHoles.count];
+            
+            
 
         // Post notifications for data updates
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"ParseRoundsUpdated" object:nil];

@@ -16,6 +16,7 @@
 	NSNumber * slopeAverage;
 	NSNumber * scoringAverage;
 	NSNumber * roundCount;
+    NSNumber * roundCountWithHoleData;
 	NSArray  * roundsFromParse;
     NSArray  * roundsFromParseForHandicap;
 	NSArray  * holesFromParse;
@@ -47,6 +48,7 @@
 @property (retain,nonatomic) NSNumber * slopeAverage;
 @property (nonatomic,retain) NSNumber * scoringAverage;
 @property (retain,nonatomic) NSNumber * roundCount;
+@property (retain,nonatomic) NSNumber * roundCountWithHoleData;
 @property (strong,nonatomic) NSArray * roundsFromParse;
 @property (strong,nonatomic) NSArray * roundsFromParseForHandicap;
 @property (strong,nonatomic) NSArray * holesFromParse;

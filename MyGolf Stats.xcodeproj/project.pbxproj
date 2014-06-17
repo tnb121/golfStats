@@ -57,11 +57,11 @@
 		5FF1E67A185E823300C4CA0D /* MGGolfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF1E679185E823300C4CA0D /* MGGolfer.m */; };
 		5FFA638B18AFE11E00D5FD01 /* MGClubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA638A18AFE11E00D5FD01 /* MGClubCell.m */; };
 		5FFB51DE189D3F8A00E38F04 /* MGTotalStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB51DD189D3F8A00E38F04 /* MGTotalStats.m */; };
-		8B2FD38F191A95C900A38FDF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2FD38E191A95C900A38FDF /* Parse.framework */; };
+		8B3D0F501930F5B90012908E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3D0F4F1930F5B90012908E /* Parse.framework */; };
+		8B77F0081936290E00202B49 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B77F0071936290E00202B49 /* Parse.framework */; };
 		8B87B30518FF415700B221F6 /* MGParseSocialIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B87B30418FF415700B221F6 /* MGParseSocialIntegration.m */; };
 		8BA932F7191334930052A907 /* MGRoundDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA932F4191334930052A907 /* MGRoundDetailTableViewCell.m */; };
 		8BA932F8191334930052A907 /* MGRoundHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA932F6191334930052A907 /* MGRoundHistoryTableViewController.m */; };
-		8BBA248718F8BB2500FEB6F8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBA248618F8BB2500FEB6F8 /* Parse.framework */; };
 		8BBA248918F8BB3E00FEB6F8 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBA248818F8BB3E00FEB6F8 /* FacebookSDK.framework */; };
 		8BBA248B18F8BBD700FEB6F8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBA248A18F8BBD700FEB6F8 /* Social.framework */; };
 		8BBA248D18F8BBDF00FEB6F8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBA248C18F8BBDF00FEB6F8 /* Accounts.framework */; };
@@ -161,14 +161,14 @@
 		5FFA638A18AFE11E00D5FD01 /* MGClubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGClubCell.m; sourceTree = "<group>"; };
 		5FFB51DC189D3F8A00E38F04 /* MGTotalStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTotalStats.h; sourceTree = "<group>"; };
 		5FFB51DD189D3F8A00E38F04 /* MGTotalStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTotalStats.m; sourceTree = "<group>"; };
-		8B2FD38E191A95C900A38FDF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		8B3D0F4F1930F5B90012908E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../Resources/SDK's/Parse.framework"; sourceTree = "<group>"; };
+		8B77F0071936290E00202B49 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8B87B30318FF415700B221F6 /* MGParseSocialIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGParseSocialIntegration.h; sourceTree = "<group>"; };
 		8B87B30418FF415700B221F6 /* MGParseSocialIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGParseSocialIntegration.m; sourceTree = "<group>"; };
 		8BA932F3191334930052A907 /* MGRoundDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRoundDetailTableViewCell.h; sourceTree = "<group>"; };
 		8BA932F4191334930052A907 /* MGRoundDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRoundDetailTableViewCell.m; sourceTree = "<group>"; };
 		8BA932F5191334930052A907 /* MGRoundHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRoundHistoryTableViewController.h; sourceTree = "<group>"; };
 		8BA932F6191334930052A907 /* MGRoundHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRoundHistoryTableViewController.m; sourceTree = "<group>"; };
-		8BBA248618F8BB2500FEB6F8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8BBA248818F8BB3E00FEB6F8 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		8BBA248A18F8BBD700FEB6F8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8BBA248C18F8BBDF00FEB6F8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -187,6 +187,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B77F0081936290E00202B49 /* Parse.framework in Frameworks */,
+				8B3D0F501930F5B90012908E /* Parse.framework in Frameworks */,
 				8BBA248D18F8BBDF00FEB6F8 /* Accounts.framework in Frameworks */,
 				8BBA248B18F8BBD700FEB6F8 /* Social.framework in Frameworks */,
 				5F0062D618B919F700BD7390 /* MessageUI.framework in Frameworks */,
@@ -195,12 +197,10 @@
 				5F0DD26D1857E2C80065CBC1 /* SystemConfiguration.framework in Frameworks */,
 				8BBA248918F8BB3E00FEB6F8 /* FacebookSDK.framework in Frameworks */,
 				5F0DD2691857E2B60065CBC1 /* Security.framework in Frameworks */,
-				8BBA248718F8BB2500FEB6F8 /* Parse.framework in Frameworks */,
 				5F0DD2671857E2AF0065CBC1 /* QuartzCore.framework in Frameworks */,
 				5F0DD2651857E2A50065CBC1 /* MobileCoreServices.framework in Frameworks */,
 				5F0DD2631857E2970065CBC1 /* libz.1.1.3.dylib in Frameworks */,
 				5F0DD2611857E2890065CBC1 /* CoreLocation.framework in Frameworks */,
-				8B2FD38F191A95C900A38FDF /* Parse.framework in Frameworks */,
 				5F0DD2271857E0DF0065CBC1 /* CoreGraphics.framework in Frameworks */,
 				5F0DD25F1857E27A0065CBC1 /* CFNetwork.framework in Frameworks */,
 				5F0DD25D1857E2730065CBC1 /* AudioToolbox.framework in Frameworks */,
@@ -244,11 +244,11 @@
 		5F0DD2231857E0DF0065CBC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B2FD38E191A95C900A38FDF /* Parse.framework */,
+				8B77F0071936290E00202B49 /* Parse.framework */,
+				8B3D0F4F1930F5B90012908E /* Parse.framework */,
 				8BBA248C18F8BBDF00FEB6F8 /* Accounts.framework */,
 				8BBA248A18F8BBD700FEB6F8 /* Social.framework */,
 				8BBA248818F8BB3E00FEB6F8 /* FacebookSDK.framework */,
-				8BBA248618F8BB2500FEB6F8 /* Parse.framework */,
 				5F0062D518B919F700BD7390 /* MessageUI.framework */,
 				5FDA12EF18A468E2006CAC89 /* CoreData.framework */,
 				5F0DD26C1857E2C80065CBC1 /* SystemConfiguration.framework */,
@@ -674,7 +674,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1D601E88-7E49-4033-B358-77209D98C459";
+				PROVISIONING_PROFILE = "041B69C6-1916-47B9-83F6-72776E958D85";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -707,7 +707,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "1D601E88-7E49-4033-B358-77209D98C459";
+				PROVISIONING_PROFILE = "041B69C6-1916-47B9-83F6-72776E958D85";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -718,11 +718,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Developer/Documents/XCode,
+					Projects/Resources/SDKs,
+					/Users/Developer/Documents/XCode,
+					"Projects/Resources/SDK's",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyGolf Stats/MyGolf Stats-Prefix.pch";
@@ -740,11 +744,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Developer/Documents/XCode,
+					Projects/Resources/SDKs,
+					/Users/Developer/Documents/XCode,
+					"Projects/Resources/SDK's",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyGolf Stats/MyGolf Stats-Prefix.pch";

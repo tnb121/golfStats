@@ -145,12 +145,10 @@ NSInteger statsLabelYOffset = 0;
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:YES];
 	[self.tabBarController.tabBar setHidden:NO];
-    
+
     //Set up background view
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"App Background"]];
     
-    
-	
     self.parFilterSelection=@"all";
 	self.parFilter.selectedSegmentIndex=0;
     
@@ -446,6 +444,12 @@ NSInteger statsLabelYOffset = 0;
             [self UpdateParseDataFromNetwork];
         [self setStats];
 	}
+    
+   // else if ([self useNativeFacebookLogin] == YES)
+    //{
+        
+  //  }
+    
 	else
 	{
 
@@ -672,20 +676,19 @@ NSInteger statsLabelYOffset = 0;
 
 
 	PFQuery *query = [PFUser query];
-	[query whereKey:@"username" equalTo:[PFUser currentUser].username];
+	[query whereKey:@"username" equalTo:user.username];
 	[query getFirstObjectInBackgroundWithBlock:^(PFObject* user, NSError * error)
 	 {
 		 if(!error)
 		 {
 			 PFObject * currentUserObject = [PFQuery getUserObjectWithId:user.objectId];
-			 [currentUserObject setObject:[NSNumber numberWithBool:YES] forKey:@"MyGolfStatsFullVersion"];
-             [currentUserObject setObject:[NSNumber numberWithBool:YES] forKey:@"HandicapCalculatorFullVersion"];
+			 [currentUserObject setObject:[NSNumber numberWithBool:NO] forKey:@"MyGolfStatsFullVersion"];
+             [currentUserObject setObject:[NSNumber numberWithBool:NO] forKey:@"HandicapCalculatorFullVersion"];
 			 [currentUserObject saveInBackground];
-
 		 }
 	 }];
+    
 	[self UpdateParseDataFromNetwork];
-
 }
 
 // Sent to the delegate when the sign up attempt fails.
@@ -783,31 +786,27 @@ NSInteger statsLabelYOffset = 0;
 		roundedView.layer.borderWidth = 3.0f;
 	}
 }
-
--(void)usingNativeFacebookLogin
+  /*
+-(BOOL)useNativeFacebookLogin
 {
+    
+ ACAccountStore *store = [[ACAccountStore alloc] init];
+ ACAccountType *accountType  = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
+ NSArray *accounts = [[store accountsWithAccountType:accountType];
 
-		if(!_accountStore)
-			_accountStore = [[ACAccountStore alloc] init];
-
-		ACAccountType *facebookTypeAccount = [_accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-
-		[_accountStore requestAccessToAccountsWithType:facebookTypeAccount
-											   options:@{ACFacebookAppIdKey: @"com.mygolfinsight.mygolfhandicap", ACFacebookPermissionsKey: @[@"basic_info"]}
-											completion:^(BOOL granted, NSError *error) {
-												if(granted)
-												{
-													facebookAccount = YES;
-												}
-												else
-												{
-													facebookAccount = NO;
-												}
-												if(error)
-												{
-													facebookAccount=NO;
-												}
-											}];
+    
+    switch (accounts.count)
+    {
+        case 1:
+            return YES;
+            break;
+            
+        default:
+            return NO;
+            break;
+    }
+  
 }
+  */
 
 @end

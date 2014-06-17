@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 #import "KeyboardController.h"
 
